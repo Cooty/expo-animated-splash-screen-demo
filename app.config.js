@@ -4,6 +4,6 @@ export default ({ config }) => ({
   splash: {
     image: "./assets/splash.png",
     resizeMode: "contain",
-    backgroundColor: "#ffffff",
+    backgroundColor: "#EC008C",
   },
 });
