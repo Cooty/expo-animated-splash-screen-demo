@@ -1,4 +1,4 @@
-import AnimatedAppLoader from "./components/AnimatedAppLoader";
+import AnimatedAppLoader from "./components/splash-animation/AnimatedAppLoader";
 import MainScreen from "./components/screens/MainScreen";
 
 export default function App() {
