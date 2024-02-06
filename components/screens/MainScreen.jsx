@@ -1,8 +1,10 @@
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
 import { Platform, View, Button, Text } from "react-native";
+import LottieView from "lottie-react-native";
 import * as Updates from "expo-updates";
 
 function MainScreen() {
+  const animation = useRef(null);
   const onReloadPress = useCallback(() => {
     if (Platform.OS === "web") {
       location.reload();
@@ -31,6 +33,34 @@ function MainScreen() {
         Pretty Cool!
       </Text>
       <Button title="Run Again" onPress={onReloadPress} />
+
+      <View
+        style={{
+          marginVertical: 20,
+          borderColor: "black",
+          borderWidth: 1,
+        }}
+      >
+        <LottieView
+          autoPlay
+          ref={animation}
+          style={{
+            width: "80%",
+            maxWidth: 400,
+            // height: 200,
+            backgroundColor: "white",
+          }}
+          source={require("../../assets/lottie/netflix.json")}
+        />
+      </View>
+      <Button
+        title="Play"
+        onPress={() => {
+          if (animation.current) {
+            animation.current.play();
+          }
+        }}
+      />
     </View>
   );
 }
