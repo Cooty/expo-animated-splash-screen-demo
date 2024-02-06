@@ -3,6 +3,9 @@
     "version": ">= 5.9.0"
   },
   "build": {
+    "android": {
+      "image": "latest"
+    },
     "development": {
       "distribution": "internal",
       "android": {
